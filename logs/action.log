@@ -1,21 +1,37 @@
-2025-07-03T13:35:27.128516 | insert | {'document': {'name': 'Shakir', 'age': 22, 'city': 'Lucknow', '_id': ObjectId('6866871e6588842e15944efd')}}
-[2025-07-03T16:51:33.574105] ACTION: INSERT | DATA: {'document': {'name': 'Karan', 'age': 1995, 'city': 'Jaipur', '_id': ObjectId('6866b515f697cf5fa0270351')}}
-[2025-07-03T16:52:36.695462] ACTION: DELETE | DATA: {'filter': {'name': 'Karan'}}
-[2025-07-03T16:55:00.896271] ACTION: INSERT | DATA: {'document': {'name': 'Karan', 'city': 'Jaipur', 'age': 30, '_id': ObjectId('6866b5e4bab5480dcb859946')}}
-[2025-07-03T17:00:51.677542] ACTION: DELETE | DATA: {'filter': {'name': 'Karan', 'city': 'Jaipur'}}
-[2025-07-03T17:09:24.624384] ACTION: INSERT | DATA: {'document': {'name': 'Arham', 'age': 28, 'city': 'Delhi', '_id': ObjectId('6866b94417eca9785794797b')}}
-[2025-07-03T17:32:35.896486] ACTION: INSERT | DATA: {'document': {'name': 'Shahid', 'age': 14, 'city': 'Sitapur', '_id': ObjectId('6866beb35767f047942400f2')}}
-[2025-07-03T17:58:49.737313] ACTION: INSERT | DATA: {'document': {'name': 'Rahul', 'city': 'Kanpur', 'age': 25, '_id': ObjectId('6866c4d9562cca0ee1a2d7bc')}}
-[2025-07-03T17:59:48.097672] ACTION: INSERT | DATA: {'document': {'name': 'Meena', 'age': 25, 'city': 'Mumbai', '_id': ObjectId('6866c514562cca0ee1a2d7be')}}
-[2025-07-03T18:00:36.740340] ACTION: DELETE | DATA: {'filter': {'name': 'Meena'}}
-[2025-07-03T18:03:49.200221] ACTION: INSERT | DATA: {'document': {'name': 'Mohit', 'age': 45, 'city': 'Lucknow', '_id': ObjectId('6866c605562cca0ee1a2d7c1')}}
-[2025-07-03T18:08:54.674842] ACTION: INSERT | DATA: {'document': {'name': 'Anjali', 'city': 'Varanasi', 'age': 35, '_id': ObjectId('6866c736562cca0ee1a2d7c3')}}
-[2025-07-03T18:25:12.211566] ACTION: INSERT | DATA: {'document': {'name': 'Ankit', 'age': 28, 'city': 'Delhi', '_id': ObjectId('6866cb08790e6fe3ceb19964')}}
-[2025-07-03T18:31:23.527731] ACTION: INSERT | DATA: {'document': {'name': 'Raj', 'age': 25, 'city': 'Delhi', '_id': ObjectId('6866cc7bf41abf74ef8374fb')}}
-[2025-07-03T18:47:01.511030] ACTION: INSERT | DATA: {'document': {'name': 'Rani', 'city': 'Lucknow', 'age': 32, '_id': ObjectId('6866d025a58283e67e3b6262')}}
-[2025-07-04T11:47:30.011740] ACTION: INSERT | DATA: {'document': {'name': 'Aditya', 'age': 26, 'city': 'Mumbai', '_id': ObjectId('6867bf51ad2c1cc7a1be7914')}}
-[2025-07-04T11:56:01.996093] ACTION: INSERT | DATA: {'document': {'name': 'Areeb', 'age': 24, 'city': 'Varanasi', '_id': ObjectId('6867c151ad2c1cc7a1be7916')}}
-[2025-07-04T12:03:36.925255] ACTION: INSERT | DATA: {'document': {'name': 'Raj', 'age': 33, 'city': 'Delhi', '_id': ObjectId('6867c3181cb867d8724fa454')}}
-[2025-07-04T12:07:59.434490] ACTION: DELETE | DATA: {'filter': {'name': 'Raj'}}
-[2025-07-04T12:20:50.713086] ACTION: INSERT | DATA: {'document': {'name': 'Raj', 'city': 'Agra', 'age': 25, '_id': ObjectId('6867c722ceeba570ebde118a')}}
-[2025-07-04T12:22:08.749067] ACTION: DELETE | DATA: {'filter': {'name': 'Raj'}}
+[2025-07-04T20:08:53.383364] ACTION: INSERT | DATA: {'document': {'name': 'Rahul', 'age': 24, 'city': 'Noida', '_id': ObjectId('686834d5d28885cf91ddba8d')}}
+[2025-07-04T20:13:03.135816] ACTION: INSERT | DATA: {'document': {'name': 'Arjun', 'age': 26, 'city': 'Delhi', '_id': ObjectId('686835cfd28885cf91ddba8f')}}
+[2025-07-04T20:21:08.298530] ACTION: INSERT | DATA: {'document': {'name': 'Ravi', 'age': 27, 'city': 'Jaipur', '_id': ObjectId('686837b32018451362db1203')}}
+[2025-07-04T20:21:08.350672] ACTION: INSERT | DATA: {'document': {'name': 'Sneha', 'age': 32, 'city': 'Pune', '_id': ObjectId('686837b42018451362db1205')}}
+[2025-07-04T20:21:08.406908] ACTION: INSERT | DATA: {'document': {'name': 'Amit', 'age': 24, 'city': 'Mumbai', '_id': ObjectId('686837b42018451362db1207')}}
+[2025-07-04T20:21:08.466323] ACTION: INSERT | DATA: {'document': {'name': 'Neha', 'age': 29, 'city': 'Chennai', '_id': ObjectId('686837b42018451362db1209')}}
+[2025-07-04T20:21:08.518359] ACTION: INSERT | DATA: {'document': {'name': 'Kunal', 'age': 21, 'city': 'Delhi', '_id': ObjectId('686837b42018451362db120b')}}
+[2025-07-04T20:21:08.575648] ACTION: INSERT | DATA: {'document': {'name': 'Anjali', 'age': 26, 'city': 'Noida', '_id': ObjectId('686837b42018451362db120d')}}
+[2025-07-04T20:21:08.630910] ACTION: INSERT | DATA: {'document': {'name': 'Rahul', 'age': 31, 'city': 'Lucknow', '_id': ObjectId('686837b42018451362db120f')}}
+[2025-07-04T20:21:08.683477] ACTION: INSERT | DATA: {'document': {'name': 'Meena', 'age': 23, 'city': 'Kanpur', '_id': ObjectId('686837b42018451362db1211')}}
+[2025-07-04T20:21:08.734396] ACTION: INSERT | DATA: {'document': {'name': 'Vikram', 'age': 35, 'city': 'Noida', '_id': ObjectId('686837b42018451362db1213')}}
+[2025-07-04T20:21:08.786536] ACTION: INSERT | DATA: {'document': {'name': 'Divya', 'age': 28, 'city': 'Lucknow', '_id': ObjectId('686837b42018451362db1215')}}
+[2025-07-04T20:21:08.834321] ACTION: INSERT | DATA: {'document': {'name': 'Tarun', 'age': 22, 'city': 'Kanpur', '_id': ObjectId('686837b42018451362db1217')}}
+[2025-07-04T20:21:08.886478] ACTION: INSERT | DATA: {'document': {'name': 'Sneha', 'age': 30, 'city': 'Noida', '_id': ObjectId('686837b42018451362db1219')}}
+[2025-07-04T20:21:08.938142] ACTION: INSERT | DATA: {'document': {'name': 'Rohan', 'age': 24, 'city': 'Lucknow', '_id': ObjectId('686837b42018451362db121b')}}
+[2025-07-04T20:21:08.986097] ACTION: INSERT | DATA: {'document': {'name': 'Kritika', 'age': 29, 'city': 'Kanpur', '_id': ObjectId('686837b42018451362db121d')}}
+[2025-07-04T20:21:09.038893] ACTION: INSERT | DATA: {'document': {'name': 'Aakash', 'age': 27, 'city': 'Noida', '_id': ObjectId('686837b52018451362db121f')}}
+[2025-07-04T20:21:09.116354] ACTION: INSERT | DATA: {'document': {'name': 'Nikita', 'age': 30, 'city': 'Mumbai', '_id': ObjectId('686837b52018451362db1221')}}
+[2025-07-04T20:21:09.184516] ACTION: INSERT | DATA: {'document': {'name': 'Siddharth', 'age': 33, 'city': 'Pune', '_id': ObjectId('686837b52018451362db1223')}}
+[2025-07-04T20:21:09.263193] ACTION: INSERT | DATA: {'document': {'name': 'Alok', 'age': 26, 'city': 'Delhi', '_id': ObjectId('686837b52018451362db1225')}}
+[2025-07-04T20:21:09.318738] ACTION: INSERT | DATA: {'document': {'name': 'Priya', 'age': 29, 'city': 'Mumbai', '_id': ObjectId('686837b52018451362db1227')}}
+[2025-07-04T20:21:09.366133] ACTION: INSERT | DATA: {'document': {'name': 'Gaurav', 'age': 25, 'city': 'Pune', '_id': ObjectId('686837b52018451362db1229')}}
+[2025-07-04T20:21:09.428657] ACTION: INSERT | DATA: {'document': {'name': 'Tanvi', 'age': 28, 'city': 'Delhi', '_id': ObjectId('686837b52018451362db122b')}}
+[2025-07-04T20:21:09.486858] ACTION: INSERT | DATA: {'document': {'name': 'Harsh', 'age': 32, 'city': 'Mumbai', '_id': ObjectId('686837b52018451362db122d')}}
+[2025-07-04T20:21:09.549955] ACTION: INSERT | DATA: {'document': {'name': 'Ishita', 'age': 27, 'city': 'Pune', '_id': ObjectId('686837b52018451362db122f')}}
+[2025-07-04T20:21:09.606570] ACTION: INSERT | DATA: {'document': {'name': 'Deepak', 'age': 31, 'city': 'Delhi', '_id': ObjectId('686837b52018451362db1231')}}
+[2025-07-04T20:21:09.658482] ACTION: INSERT | DATA: {'document': {'name': 'Aman', 'age': 24, 'city': 'Mumbai', '_id': ObjectId('686837b52018451362db1233')}}
+[2025-07-04T20:25:05.788863] ACTION: UPDATE | DATA: {'filter': {'name': 'Sneha', 'city': 'Pune'}, 'update': {'city': 'Nagpur'}}
+[2025-07-04T20:25:05.840986] ACTION: UPDATE | DATA: {'filter': {'name': 'Neha'}, 'update': {'age': 30}}
+[2025-07-04T20:25:05.890552] ACTION: UPDATE | DATA: {'filter': {'name': 'Amit'}, 'update': {'city': 'Thane'}}
+[2025-07-04T20:25:05.945050] ACTION: UPDATE | DATA: {'filter': {'name': 'Divya'}, 'update': {'age': 29}}
+[2025-07-04T20:25:05.995893] ACTION: UPDATE | DATA: {'filter': {'name': 'Gaurav'}, 'update': {'city': 'Surat'}}
+[2025-07-04T20:25:06.062071] ACTION: UPDATE | DATA: {'filter': {'name': 'Alok'}, 'update': {'age': 28}}
+[2025-07-04T20:25:06.117594] ACTION: UPDATE | DATA: {'filter': {'name': 'Priya'}, 'update': {'age': 31}}
+[2025-07-04T20:25:06.173763] ACTION: DELETE | DATA: {'filter': {'name': 'Kunal'}}
+[2025-07-04T20:25:06.225229] ACTION: DELETE | DATA: {'filter': {'name': 'Aakash'}}
+[2025-07-04T20:25:06.273022] ACTION: DELETE | DATA: {'filter': {'name': 'Harsh'}}
