@@ -3,8 +3,11 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 from datetime import datetime
 
-# Load .env variables
-load_dotenv()
+
+if os.getenv("RENDER") != "true":
+    from dotenv import load_dotenv
+    load_dotenv()
+
 
 # MongoDB connection
 mongo_uri = os.getenv("MONGO_URI")
