@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PromptDB</title>
-  <link rel="stylesheet" href="static/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-  <div class="chat-container">
-    <div class="header">
-      <h2>👋 Hi there!</h2>
-      <strong>How can I help you today?</strong>
+    <nav class="pill-navbar" aria-label="Main navigation">
+        <ul>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="chat-container">
+            <div class="welcome-box">
+                <h2>👋 Hi there!</h2>
+                <p>How can I help you today?</p>
+            </div>
+            
+            <div class="welcome-message">Ask me anything about your data...</div>
+
+            <div class="chat-controls">
+                <button id="clear-chat">Clear Chat</button>
+            </div>
+
+            <div id="chat-box"></div>
+
+            <div class="input-box">
+                <input type="text" id="user-input" placeholder="Type your message..." autofocus />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
     </div>
 
-    <div class="welcome-message">Ask me anything about your data...</div>
+    <footer>
+        <p>&copy; 2025 PromptDB. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
 
-    <!-- ✅ Clear Chat Button -->
-    <div class="chat-controls">
-      <button id="clear-chat">Clear Chat</button>
-    </div>
-
-    <div id="chat-box"></div>
-
-    <!-- ✅ Input Area -->
-    <div class="input-box">
-      <input
-        type="text"
-        id="user-input"
-        placeholder="Type your message..."
-        autofocus
-      />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-
-  <script src="static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

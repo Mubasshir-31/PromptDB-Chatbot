@@ -35,3 +35,13 @@
 [2025-07-04T20:25:06.173763] ACTION: DELETE | DATA: {'filter': {'name': 'Kunal'}}
 [2025-07-04T20:25:06.225229] ACTION: DELETE | DATA: {'filter': {'name': 'Aakash'}}
 [2025-07-04T20:25:06.273022] ACTION: DELETE | DATA: {'filter': {'name': 'Harsh'}}
+[2025-09-20T14:07:05.163010] ACTION: INSERT | DATA: {'document': {'name': 'Aman', 'age': 23, 'city': 'Gurgaon', '_id': ObjectId('68ceb5089e3d124c43c7bc3f')}}
+[2025-09-21T19:21:16.730813] ACTION: DELETE | DATA: {'filter': {}}
+[2025-09-21T19:25:45.707669] ACTION: DELETE | DATA: {'filter': {'name': 'rahul'}}
+[2025-09-21T19:26:03.159880] ACTION: DELETE | DATA: {'filter': {'name': 'rahul', 'city': 'Lucknow'}}
+[2025-09-21T19:26:14.500617] ACTION: DELETE | DATA: {'filter': {'name': 'rahul', 'city': 'Lucknow'}}
+[2025-09-21T19:26:26.466651] ACTION: DELETE | DATA: {'filter': {'name': 'Rahul', 'city': 'Lucknow'}}
+[2025-09-22T09:16:56.962389] ACTION: DELETE | DATA: {'filter': {'name': 'Sneha'}}
+[2025-09-22T09:17:52.066734] ACTION: DELETE | DATA: {'filter': {'name': 'tanvi', 'city': 'Delhi'}}
+[2025-09-22T09:18:05.892958] ACTION: DELETE | DATA: {'filter': {'name': 'tanvi'}}
+[2025-09-22T09:18:16.204803] ACTION: DELETE | DATA: {'filter': {'name': 'Tanvi'}}
