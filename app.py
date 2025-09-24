@@ -8,6 +8,10 @@ from datetime import datetime
 
 load_dotenv()
 
+mongo_uri = os.getenv("MONGO_URI")
+# print(f"DEBUG: MONGO_URI is -> {mongo_uri}")
+session_client = MongoClient(mongo_uri)
+
 # ✅ Check required environment variables
 if not os.getenv("MONGO_URI") or not os.getenv("OPENROUTER_API_KEY"):
     raise EnvironmentError("Missing MONGO_URI or OPENROUTER_API_KEY in environment variables.")

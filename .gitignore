@@ -4,7 +4,6 @@
 # Environment
 .env
 venv/
-env/
 
 
 # Logs
