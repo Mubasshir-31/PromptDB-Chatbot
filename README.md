@@ -1,6 +1,8 @@
 
 # PromptDB Chatbot 🧠💬
 
+Live Demo :--  https://promptdb-chatbot-fwnj.onrender.com
+
 A smart AI-powered chatbot built with Python, Flask, OpenRouter, and MongoDB.
 It allows natural language queries like:
 
