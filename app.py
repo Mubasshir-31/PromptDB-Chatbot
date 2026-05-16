@@ -397,9 +397,9 @@ def database_error_response(error):
 def login():
     if request.method == "POST":
         username = request.form.get("username", "").strip()
-        password = request.form.get("password", "")
-        expected_user = os.getenv("ADMIN_USERNAME", "PromptDB")
-        expected_password = os.getenv("ADMIN_PASSWORD", "PromptDatabase")
+        password = request.form.get("password", "").strip()
+        expected_user = os.getenv("ADMIN_USERNAME", "PromptDB").strip()
+        expected_password = os.getenv("ADMIN_PASSWORD", "PromptDatabase").strip()
 
         if username == expected_user and password == expected_password:
             session["authenticated"] = True
