@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="auth-body">
+    <main class="auth-shell">
+        <section class="auth-intro">
+            <span class="brand-mark">P</span>
+            <p class="eyebrow">Secure access</p>
+            <h1>PromptDB Admin</h1>
+            <p>Sign in to manage database commands, users, logs, and exports.</p>
+        </section>
+
+        <form class="auth-card" method="post">
+            <h2>Admin Login</h2>
+            {% if error %}
+            <p class="form-error">{{ error }}</p>
+            {% endif %}
+            <label>
+                Username
+                <input name="username" autocomplete="username" required />
+            </label>
+            <label>
+                Password
+                <input name="password" type="password" autocomplete="current-password" required />
+            </label>
+            <button type="submit">Sign in</button>
+        </form>
+    </main>
+    <footer class="site-footer auth-footer">
+        <span>PromptDB</span>
+        <span>Secure AI MongoDB Console</span>
+    </footer>
+</body>
+</html>

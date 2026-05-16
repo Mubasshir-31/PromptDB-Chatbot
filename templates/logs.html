@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Logs | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">P</span>
+            <span><strong>PromptDB</strong><small>AI MongoDB Console</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/">Console</a>
+            <a href="/users">Users</a>
+            <a href="/logs" class="active">Audit Logs</a>
+            <a href="/features">Features</a>
+            <a href="/about">Architecture</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <section class="page-intro table-intro">
+            <div>
+                <p class="eyebrow">Observability</p>
+                <h1>Every command leaves an audit trail.</h1>
+                <p>Review prompts, generated commands, status, and result summaries for recent operations.</p>
+            </div>
+            <button class="secondary-button" id="refresh-logs" type="button">Refresh logs</button>
+        </section>
+
+        <section class="data-card">
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Action</th>
+                            <th>Status</th>
+                            <th>Parser</th>
+                            <th>Prompt</th>
+                            <th>Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-table-body">
+                        <tr><td colspan="6">Loading audit logs...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>Audit History</span>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

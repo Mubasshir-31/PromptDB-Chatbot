@@ -3,45 +3,65 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - PromptDB</title>
-    <link rel="stylesheet" href="static/style.css" />
+    <title>Architecture | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <nav class="pill-navbar">
-        <!-- <a href="/" class="brand">PromptDB</a> -->
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about" class="active">About</a></li>
-            <li><a href="/features">Features</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">P</span>
+            <span><strong>PromptDB</strong><small>AI MongoDB Console</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/">Console</a>
+            <a href="/users">Users</a>
+            <a href="/logs">Audit Logs</a>
+            <a href="/features">Features</a>
+            <a href="/about" class="active">Architecture</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
 
-    <main>
-        <div class="about-section">
-            <div class="about-image">
-                <img src="static/images/image1.jpg" alt="PromptDB" />
+    <main class="content-page">
+        <section class="page-intro split-intro">
+            <div>
+                <p class="eyebrow">System design</p>
+                <h1>From prompt to protected database action.</h1>
+                <p>PromptDB accepts a user prompt, generates a strict JSON command, validates the command, and executes the matching MongoDB operation.</p>
             </div>
-            <div class="about-content">
-                <h1>About PromptDB</h1>
-                <p>
-                    PromptDB is a natural language-to-database interface. Our goal is to make interacting with your data as simple as having a conversation. Using AI, PromptDB translates plain English instructions into complex MongoDB commands, allowing you to find, insert, update, and delete data without writing a single line of code.
-                </p>
-                <p>
-                    This project was built to demonstrate the power of large language models in automating complex tasks and bridging the gap between human language and technical operations.
-                </p>
-                <a href="#" class="learn-more-btn">LEARN MORE</a>
+            <div class="architecture-card">
+                <code>Prompt -> LLM JSON -> Validation -> MongoDB -> UI</code>
             </div>
-        </div>
+        </section>
+
+        <section class="timeline">
+            <article>
+                <span>01</span>
+                <h2>Input validation</h2>
+                <p>The backend checks empty messages, length limits, allowed collections, allowed fields, and supported MongoDB operators.</p>
+            </article>
+            <article>
+                <span>02</span>
+                <h2>AI command generation</h2>
+                <p>OpenRouter is instructed to return only JSON, keeping the database layer separate from natural language.</p>
+            </article>
+            <article>
+                <span>03</span>
+                <h2>Database execution</h2>
+                <p>MongoDB operations run only after the parsed command passes the backend guardrails.</p>
+            </article>
+            <article>
+                <span>04</span>
+                <h2>Operational resilience</h2>
+                <p>MongoDB connections are lazy, timed out, and surfaced as clear UI errors when external services are unavailable.</p>
+            </article>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 PromptDB. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>AI MongoDB Console</span>
     </footer>
-
-    <script src="static/script.js"></script>
 </body>
 </html>

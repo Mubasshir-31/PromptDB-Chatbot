@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">P</span>
+            <span><strong>PromptDB</strong><small>AI MongoDB Console</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/">Console</a>
+            <a href="/users" class="active">Users</a>
+            <a href="/logs">Audit Logs</a>
+            <a href="/features">Features</a>
+            <a href="/about">Architecture</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <section class="page-intro table-intro">
+            <div>
+                <p class="eyebrow">Database dashboard</p>
+                <h1>Manage users without leaving the app.</h1>
+                <p>Search, sort, create, edit, delete, and export user records.</p>
+            </div>
+            <div class="export-actions">
+                <a class="secondary-button link-button" href="/api/export/users.csv">Export CSV</a>
+                <a class="secondary-button link-button" href="/api/export/users.json">Export JSON</a>
+            </div>
+        </section>
+
+        <section class="data-layout">
+            <form class="data-card" id="user-form">
+                <h2>Add user</h2>
+                <label>Name<input id="new-name" required /></label>
+                <label>Age<input id="new-age" type="number" min="1" required /></label>
+                <label>City<input id="new-city" required /></label>
+                <button type="submit">Create user</button>
+                <p class="form-note" id="user-form-note"></p>
+            </form>
+
+            <section class="data-card table-card">
+                <div class="table-toolbar">
+                    <label>
+                        Search
+                        <input id="user-search" placeholder="Name or city" />
+                    </label>
+                    <label>
+                        Sort
+                        <select id="user-sort">
+                            <option value="name">Name</option>
+                            <option value="age">Age</option>
+                            <option value="city">City</option>
+                            <option value="_id">Newest</option>
+                        </select>
+                    </label>
+                    <button class="secondary-button" id="refresh-users" type="button">Refresh</button>
+                </div>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>City</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body">
+                            <tr><td colspan="4">Loading users...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>User Management</span>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

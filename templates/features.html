@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Features - PromptDB</title>
-    <link rel="stylesheet" href="static/style.css" />
+    <title>Features | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <nav class="pill-navbar">
-        <!-- <a href="/" class="brand">PromptDB</a> -->
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/features" class="active">Features</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="features-section">
-            <!-- <h1 class="features-title">Features</h1> -->
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">P</span>
+            <span><strong>PromptDB</strong><small>AI MongoDB Console</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/">Console</a>
+            <a href="/users">Users</a>
+            <a href="/logs">Audit Logs</a>
+            <a href="/features" class="active">Features</a>
+            <a href="/about">Architecture</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
 
-            <div class="feature-cards-container">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #333;"></div>
-                    <h3>Natural Language Queries</h3>
-                    <p>
-                        Translate plain English instructions into complex MongoDB commands, allowing you to find, update, or delete data without any code.
-                    </p>
-                    <a href="#" class="feature-btn">Learn More</a>
-                </div>
+    <main class="content-page">
+        <section class="page-intro">
+            <p class="eyebrow">Capabilities</p>
+            <h1>Core tools for safe database operations.</h1>
+            <p>PromptDB combines AI command generation, validation, audit history, and manual data management.</p>
+        </section>
 
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #ff007f;"></div>
-                    <h3>CRUD Operations</h3>
-                    <p>
-                        Easily perform core database operations like Create, Read, Update, and Delete on your data with simple conversational commands.
-                    </p>
-                    <a href="#" class="feature-btn">Learn More</a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #00ff7f;"></div>
-                    <h3>Smart Filtering</h3>
-                    <p>
-                        Use natural language to apply powerful filters, sorting options, and data limitations for precise data retrieval.
-                    </p>
-                    <a href="#" class="feature-btn">Learn More</a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #007bff;"></div>
-                    <h3>Session History</h3>
-                    <p>
-                        The application remembers your conversation history, allowing for contextual follow-up questions and commands.
-                    </p>
-                    <a href="#" class="feature-btn">Learn More</a>
-                </div>
-            </div>
-        </div>
+        <section class="feature-grid">
+            <article class="feature-card">
+                <span class="feature-token">AI</span>
+                <h2>Natural Language Parser</h2>
+                <p>Uses OpenRouter to transform plain English into strict JSON commands before any database operation runs.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-token">DB</span>
+                <h2>MongoDB CRUD Layer</h2>
+                <p>Supports controlled find, insert, update, and delete operations against the users collection.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-token">UX</span>
+                <h2>Preview and Confirmation</h2>
+                <p>Shows the generated MongoDB command and requires confirmation before write operations run.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-token">OPS</span>
+                <h2>Audit Logging</h2>
+                <p>Tracks prompts, commands, parser source, action status, and result summaries for operational visibility.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-token">SAFE</span>
+                <h2>Admin Access Control</h2>
+                <p>Protects the console, users dashboard, exports, logs, and database APIs behind a Flask session login.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-token">STATE</span>
+                <h2>Users Dashboard</h2>
+                <p>Provides manual CRUD, search, sorting, and CSV or JSON export for the users collection.</p>
+            </article>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 PromptDB. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
+
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>Secure CRUD · Audit Logs · Exports</span>
     </footer>
-    <script src="static/script.js"></script>
 </body>
 </html>

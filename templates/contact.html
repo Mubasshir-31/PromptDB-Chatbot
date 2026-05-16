@@ -3,50 +3,63 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - PromptDB</title>
-    <link rel="stylesheet" href="static/style.css" />
+    <title>Contact | PromptDB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <nav class="pill-navbar">
-        <!-- <a href="/" class="brand">PromptDB</a> -->
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/features">Features</a></li>
-            <li><a href="/contact" class="active">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="contact-section">
-            <div class="contact-info">
-                <h1>Get in Touch</h1>
-                <p>I'd like to hear from you!</p>
-                <p>If you have any inquiries or just want to say hi, please use the contact form.</p>
-                <div class="contact-details">
-                    <p>📧 mubkhids.official@gmail.com</p>
-                    <div class="social-icons">
-                        </div>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">P</span>
+            <span><strong>PromptDB</strong><small>AI MongoDB Console</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/">Console</a>
+            <a href="/users">Users</a>
+            <a href="/logs">Audit Logs</a>
+            <a href="/features">Features</a>
+            <a href="/about">Architecture</a>
+            <a href="/contact" class="active">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <section class="contact-layout">
+            <div class="page-intro">
+                <p class="eyebrow">Contact</p>
+                <h1>Mohd Mubasshir Khan</h1>
+                <p>Full-stack developer focused on practical AI applications, backend systems, and clean product interfaces.</p>
+
+                <div class="contact-links">
+                    <a href="mailto:mubkhids.official@gmail.com">mubasshirkhan9336@gmail.com</a>
                 </div>
             </div>
-            <div class="contact-form">
-                <form>
-                    <div class="form-row">
-                        <input type="text" id="firstName" placeholder="First Name" />
-                        <input type="text" id="lastName" placeholder="Last Name" />
-                    </div>
-                    <input type="email" id="email" placeholder="Email *" required />
-                    <textarea id="message" placeholder="Message"></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
+
+            <form class="contact-card" id="contact-form">
+                <h2>Message</h2>
+                <label>
+                    Name
+                    <input type="text" id="contact-name" placeholder="Your name" required />
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="contact-email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                    Message
+                    <textarea id="contact-message" rows="5" placeholder="Write a short message" required></textarea>
+                </label>
+                <button type="submit">Submit</button>
+                <p class="form-note" id="contact-note"></p>
+            </form>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 PromptDB. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
+
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>AI MongoDB Console</span>
     </footer>
-    <script src="static/script.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

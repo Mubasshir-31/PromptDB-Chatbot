@@ -1,48 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PromptDB</title>
+    <title>PromptDB | Natural Language MongoDB Assistant</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <nav class="pill-navbar" aria-label="Main navigation">
-        <ul>
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/features">Features</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="PromptDB home">
+            <span class="brand-mark">P</span>
+            <span>
+                <strong>PromptDB</strong>
+                <small>AI MongoDB Console</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/" class="active">Console</a>
+            <a href="/users">Users</a>
+            <a href="/logs">Audit Logs</a>
+            <a href="/features">Features</a>
+            <a href="/about">Architecture</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
 
-    <div class="main-content">
-        <div class="chat-container">
-            <div class="welcome-box">
-                <h2>👋 Hi there!</h2>
-                <p>How can I help you today?</p>
+    <main class="app-shell">
+        <section class="workspace">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">AI database console</p>
+                    <h1>Query MongoDB in plain English.</h1>
+                    <p class="lede">Generate, review, and execute validated database commands from one secure workspace.</p>
+                </div>
+                <div class="status-stack" aria-label="Service status">
+                    <div class="status-pill" id="app-status"><span></span> App</div>
+                    <div class="status-pill" id="mongo-status"><span></span> MongoDB</div>
+                    <div class="status-pill" id="openrouter-status"><span></span> OpenRouter</div>
+                </div>
             </div>
-            
-            <div class="welcome-message">Ask me anything about your data...</div>
 
-            <div class="chat-controls">
-                <button id="clear-chat">Clear Chat</button>
+            <div class="metrics-grid">
+                <article class="metric">
+                    <span>Supported actions</span>
+                    <strong>4</strong>
+                    <small>Find, insert, update, delete</small>
+                </article>
+                <article class="metric">
+                    <span>Schema fields</span>
+                    <strong>3</strong>
+                    <small>name, age, city</small>
+                </article>
+                <article class="metric">
+                    <span>Guardrails</span>
+                    <strong>On</strong>
+                    <small>Allow-listed fields and operators</small>
+                </article>
             </div>
 
-            <div id="chat-box"></div>
+            <section class="chat-panel" aria-label="PromptDB chat console">
+                <div class="chat-toolbar">
+                    <div>
+                        <h2>Command Console</h2>
+                        <p>Describe a database action, review the generated command, then execute it.</p>
+                    </div>
+                    <button class="secondary-button" id="clear-chat" type="button">Clear session</button>
+                </div>
 
-            <div class="input-box">
-                <input type="text" id="user-input" placeholder="Type your message..." autofocus />
-                <button onclick="sendMessage()">Send</button>
+                <div id="chat-box" aria-live="polite"></div>
+
+                <div class="composer">
+                    <label class="sr-only" for="user-input">Message</label>
+                    <textarea id="user-input" maxlength="500" rows="2" placeholder="Example: Show users from Delhi" autofocus></textarea>
+                    <div class="composer-footer">
+                        <span id="char-count">0/500</span>
+                        <button id="send-button" type="button">Send prompt</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <aside class="sidebar" aria-label="Prompt helpers">
+            <section class="side-panel">
+                <div class="side-heading">
+                    <h2>Prompt Library</h2>
+                    <button class="text-button" id="refresh-examples" type="button">Refresh</button>
+                </div>
+                <div class="example-list" id="example-list"></div>
+            </section>
+
+            <section class="side-panel">
+                <h2>Data Contract</h2>
+                <div class="schema-card">
+                    <span>Collection</span>
+                    <strong>users</strong>
+                    <code>{ name: string, age: number, city: string }</code>
+                </div>
+            </section>
+
+            <section class="side-panel">
+                <h2>Last Response</h2>
+                <pre id="response-preview">No request sent yet.</pre>
+            </section>
+        </aside>
+    </main>
+
+    <div class="modal-backdrop" id="confirm-modal" hidden>
+        <section class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+            <div>
+                <p class="eyebrow">Write operation</p>
+                <h2 id="confirm-title">Review before execution</h2>
+                <p>This command can change database records. Confirm only if the generated command matches your intent.</p>
             </div>
-        </div>
+            <pre id="command-preview">No command generated.</pre>
+            <div class="dialog-actions">
+                <button class="secondary-button" id="cancel-command" type="button">Cancel</button>
+                <button id="confirm-command" type="button">Execute command</button>
+            </div>
+        </section>
     </div>
 
-    <footer>
-        <p>&copy; 2025 PromptDB. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
+    <footer class="site-footer">
+        <span>PromptDB</span>
+        <span>AI MongoDB Console</span>
+        <span>Secure CRUD · Audit Logs · Exports</span>
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
