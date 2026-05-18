@@ -2,36 +2,165 @@
 
 Live Demo: https://promptdb-chatbot-fwnj.onrender.com
 
-PromptDB is a secure AI-powered MongoDB console. It converts natural language into validated database commands, previews write operations before execution, and provides user management, audit logs, and data export tools.
+PromptDB is an AI-powered database operations platform that enables users to interact with MongoDB using natural language while enforcing validation, execution previews, audit logging, and administrative safeguards.
 
-## Features
+The platform is designed to reduce operational risk in AI-assisted database workflows by introducing confirmation layers, query validation, and transparent execution pipelines before database execution.
 
-- Admin login with Flask sessions
-- Natural language to MongoDB CRUD commands
-- Command preview before execution
-- Confirmation for insert, update, and delete
-- Users dashboard with create, edit, delete, search, and sort
-- Audit log dashboard
-- CSV and JSON export
-- Service status checks for Flask, MongoDB, and OpenRouter
-- Responsive UI using the project palette: light gray, dark navy, steel blue, and sand gold
+---
 
-## Tech Stack
+# Features
 
+## AI Database Operations
+- Convert natural language into MongoDB CRUD operations
+- AI-assisted query generation using OpenRouter AI
+- Dynamic query execution pipeline
+- Intelligent command parsing and validation
+
+## Secure Execution Workflow
+- Preview database operations before execution
+- Confirmation layer for insert, update, and delete actions
+- Validation safeguards to reduce unsafe database operations
+- Session-based admin authentication
+
+## User Management Dashboard
+- Create, edit, delete, and manage users
+- Search and sort functionality
+- Responsive dashboard interface
+- Dynamic MongoDB data handling
+
+## Audit & Monitoring
+- Audit log dashboard for tracking actions
+- Service status monitoring
+- Flask, MongoDB, and OpenRouter health checks
+- Execution transparency and operational tracking
+
+## Data Export
+- Export database records as CSV
+- Export database records as JSON
+
+## UI & Experience
+- Responsive frontend design
+- Clean dashboard-based interface
+- Custom project color palette:
+  - Light Gray
+  - Dark Navy
+  - Steel Blue
+  - Sand Gold
+
+---
+
+# Architecture
+
+Frontend (HTML/CSS/JavaScript)
+
+↓
+
+Flask Backend APIs
+
+↓
+
+AI Prompt Processing Layer
+
+↓
+
+Validation & Preview Engine
+
+↓
+
+MongoDB Execution Layer
+
+↓
+
+Audit Logging System
+
+The application separates AI interpretation from database execution through a validation and preview pipeline to reduce unsafe operations and improve execution transparency.
+
+---
+
+# Tech Stack
+
+## Backend
 - Python
 - Flask
-- MongoDB Atlas
-- OpenRouter
-- HTML, CSS, JavaScript
 
-## Local Setup
+## Database
+- MongoDB Atlas
+
+## AI Integration
+- OpenRouter AI
+
+## Frontend
+- HTML
+- CSS
+- JavaScript
+
+## Tools & Services
+- Render
+- Git
+- GitHub
+
+---
+
+# Security Features
+
+- Session-based admin authentication
+- Protected environment variables
+- Write operation confirmation workflow
+- Query validation before execution
+- Audit logging for database activity
+
+---
+
+# Screenshots
+
+## Login Dashboard
+![alt text](assets/Login.png)
+
+## AI Query Interface
+![alt text](assets/Chats.png)
+
+## Users Management Dashboard
+![alt text](assets/Users.png)
+
+## Audit Logs Dashboard
+![alt text](<assets/Audit Logs.png>)
+---
+
+# Live Application
+
+## Open PromptDB
+https://promptdb-chatbot-fwnj.onrender.com
+
+---
+
+# Local Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Mubasshir-31/PromptDB-Chatbot.git
+cd PromptDB-Chatbot
+```
+
+## Create Virtual Environment
+
+### Windows (PowerShell)
 
 ```powershell
-cd e:\Projects\PromptDB
 uv python install 3.13
 uv venv --python 3.13 .venv
-uv pip install --python .venv\Scripts\python.exe -r requirements.txt
 .\.venv\Scripts\Activate.ps1
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Application
+
+```bash
 python app.py
 ```
 
@@ -41,29 +170,29 @@ Open:
 http://127.0.0.1:5000
 ```
 
-## Environment Variables
+---
 
-Create `.env` in the project root:
+# Environment Variables
+
+Create a `.env` file in the project root:
 
 ```env
 MONGO_URI=your-mongodb-uri
 OPENROUTER_API_KEY=your-openrouter-api-key
 OPENROUTER_MODEL=openrouter/free
 FLASK_SECRET_KEY=your-long-random-secret
-ADMIN_USERNAME=PromptDB
-ADMIN_PASSWORD=PromptDatabase
+ADMIN_USERNAME=your-admin-username
+ADMIN_PASSWORD=your-admin-password
 ```
 
-Do not commit `.env`.
+Important:
+- Never commit `.env`
+- Store secrets securely
+- Use strong production credentials
 
-## Login
+---
 
-```text
-Username: PromptDB
-Password: PromptDatabase
-```
-
-## Main Routes
+# Main Routes
 
 ```text
 /login
@@ -75,7 +204,9 @@ Password: PromptDatabase
 /contact
 ```
 
-## API Routes
+---
+
+# API Routes
 
 ```text
 GET    /health
@@ -92,38 +223,40 @@ GET    /api/export/users.csv
 GET    /api/export/users.json
 ```
 
-## GitHub Push Checklist
+---
 
-Confirm ignored files:
+# Deployment
 
-```powershell
-git check-ignore -v .env
-git check-ignore -v .venv
-git check-ignore -v logs/action.log
-```
+PromptDB is deployed on Render with MongoDB Atlas as the cloud database backend.
 
-Check what will be committed:
+---
 
-```powershell
-git status --short
-```
+# Future Improvements
 
-If `.env` appears, remove it from tracking:
+- Multi-database support
+- Dockerized deployment
+- Role-based access control (RBAC)
+- Real-time monitoring dashboard
+- Async task queues
+- Query analytics
+- AI schema intelligence
+- WebSocket-based live updates
+- PostgreSQL support
 
-```powershell
-git rm --cached .env
-```
+---
 
-Commit and push:
+# Resume Description
 
-```powershell
-git add .gitignore .env.example README.md app.py mongodb_utils.py insert_sample_users.py static templates requirements.txt
-git commit -m "Finalize PromptDB dashboard"
-git branch -M main
-git remote set-url origin https://github.com/Mubasshir-31/PromptDB-Chatbot.git
-git push -u origin main
-```
+Built PromptDB, an AI-powered database operations platform using Flask, MongoDB Atlas, and OpenRouter AI that converts natural language into validated CRUD workflows with execution previews, audit logging, admin authentication, and secure API handling.
 
-## Resume Bullet
+---
 
-Built PromptDB, a Flask and MongoDB AI console that converts natural language into validated CRUD commands with write previews, admin authentication, audit logs, CSV/JSON export, and a responsive dashboard UI.
+# Author
+
+MOHD MUBASSHIR KHAN
+
+GitHub:
+https://github.com/Mubasshir-31
+
+LinkedIn:
+https://www.linkedin.com/in/mohd-mubasshir-khan-0553121bb/
